@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <h1>Attendance</h1>
+
+        <div class="calendar card">
+            <div class="calendar-header">
+                <button class="btn">&lt; Prev</button>
+                <span>July 2024</span>
+                <button class="btn">Next &gt;</button>
+            </div>
+            <div class="calendar-grid">
+                <div class="calendar-day-header">Mon</div>
+                <div class="calendar-day-header">Tue</div>
+                <div class="calendar-day-header">Wed</div>
+                <div class="calendar-day-header">Thu</div>
+                <div class="calendar-day-header">Fri</div>
+                <div class="calendar-day-header">Sat</div>
+                <div class="calendar-day-header">Sun</div>
+                
+                <!-- Example Days for July 2024 (starts on a Monday) -->
+                <div class="calendar-day">1</div>
+                <div class="calendar-day absent">2</div>
+                <div class="calendar-day">3</div>
+                <div class="calendar-day">4</div>
+                <div class="calendar-day">5</div>
+                <div class="calendar-day">6</div>
+                <div class="calendar-day">7</div>
+                <div class="calendar-day">8</div>
+                <div class="calendar-day">9</div>
+                <div class="calendar-day">10</div>
+                <div class="calendar-day">11</div>
+                <div class="calendar-day absent">12</div>
+                <div class="calendar-day">13</div>
+                <div class="calendar-day">14</div>
+                <div class="calendar-day">15</div>
+                <div class="calendar-day">16</div>
+                <div class="calendar-day">17</div>
+                <div class="calendar-day">18</div>
+                <div class="calendar-day">19</div>
+                <div class="calendar-day">20</div>
+                <div class="calendar-day">21</div>
+                <div class="calendar-day">22</div>
+                <div class="calendar-day">23</div>
+                <div class="calendar-day">24</div>
+                <div class="calendar-day">25</div>
+                <div class="calendar-day">26</div>
+                <div class="calendar-day">27</div>
+                <div class="calendar-day">28</div>
+                <div class="calendar-day">29</div>
+                <div class="calendar-day">30</div>
+                <div class="calendar-day">31</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="section-title">Weekly Summary</h2>
+            <p>4/5 days attended this week</p> 
+        </div>
+
+        <div class="card">
+            <h2 class="section-title">Last Marked Absent</h2>
+            <p>July 12, 2024 - Sick Leave</p>
+        </div>
+
+        <div class="cta-section card">
+            <h2 class="section-title">More Actions</h2>
+            <button class="btn btn-primary" style="margin-bottom: 8px;">Export Report</button>
+            <button class="btn btn-accent">Report Issue</button>
+        </div>
+
+    </div>
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item active"> <!-- Attendance is not a main nav, so Home is active -->
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>
+            <span>Home</span>
+        </a>
+        <a href="homework.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path></svg>
+            <span>Homework</span>
+        </a>
+        <a href="fees.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.8 10.9c-.2-.1-.4-.2-.7-.2H11c-.6 0-1.2.1-1.7.3L5 15v2h14v-2l-4.3-3.8c-.5-.2-1-.3-1.7-.3h-.1c-.2 0-.5.1-.7.2l-1.4 1.4-1.4-1.4zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+            <span>Fees</span>
+        </a>
+        <a href="events.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"></path></svg>
+            <span>Events</span>
+        </a>
+        <a href="messages.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"></path></svg>
+            <span>Messages</span>
+        </a>
+    </nav>
+</body>
+</html>

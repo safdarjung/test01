@@ -1,0 +1,491 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Roboto', sans-serif; /* Specify Inter first, fallback to Roboto */
+    background-color: #F9FAFB; /* light grey */
+    color: #111827; /* dark grey */
+}
+
+/* Color Palette */
+:root {
+    --primary-color: #3A7AFE; /* Edu blue */
+    --accent-color: #FCD34D; /* for alerts/buttons */
+    --background-color: #F9FAFB; /* light grey */
+    --text-color: #111827; /* dark grey */
+    --white: #FFFFFF;
+    --light-grey: #E5E7EB;
+    --medium-grey: #9CA3AF;
+    --success-green: #10B981;
+    --error-red: #EF4444;
+}
+
+/* Typography */
+h1 { /* H1 – 24px, Bold */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+h2 { /* H2 – 20px, Bold */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+p, span, div { /* Body – 16px, Regular */
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.caption { /* Caption – 12px, Regular */
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/* Standard Section Title Styling */
+.section-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 24px; /* Space above section titles */
+    margin-bottom: 16px; /* Increased bottom margin for content separation */
+    border-bottom: 1px solid var(--light-grey);
+    padding-bottom: 8px;
+}
+
+/* Utility Classes for rounded corners and shadows (can be expanded later) */
+.card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* subtle elevation */
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.btn {
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out, border-color 0.2s ease-in-out; /* Base transition for all buttons */
+}
+
+.btn:hover {
+    opacity: 0.85; /* Default hover for unspecified buttons */
+}
+
+.btn:active {
+    opacity: 0.7; /* Default active state for unspecified buttons */
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    width: 100%; /* full width for main actions */
+}
+
+.btn-primary:hover {
+    background-color: #2c67e0; /* Darker shade of primary */
+    opacity: 1; /* Ensure opacity is full for bg change */
+}
+.btn-primary:active {
+    background-color: #1a52c0; /* Even darker for active */
+    opacity: 1;
+}
+
+.btn-accent {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+.btn-accent:hover {
+    background-color: #eab308; /* Darker shade of accent */
+    opacity: 1;
+}
+.btn-accent:active {
+    background-color: #ca8a04; /* Even darker for active */
+    opacity: 1;
+}
+
+/* Basic app container for consistent padding and max-width for mobile-first view */
+.app-container {
+    max-width: 480px; /* Common width for mobile designs */
+    margin: 0 auto;
+    padding: 16px;
+    background-color: var(--background-color);
+    padding-bottom: 80px; /* Add padding to prevent overlap with bottom-nav */
+}
+
+/* Bottom Navigation placeholder styling */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 480px; /* To match app-container */
+    margin: 0 auto; /* Center it if app-container has margin auto */
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    border-top: 1px solid var(--light-grey);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--medium-grey);
+    font-size: 12px;
+    transition: color 0.2s ease-in-out, opacity 0.2s ease-in-out; /* Smooth transition for nav items */
+}
+
+.nav-item:hover:not(.active) { /* Hover state for non-active items */
+    color: var(--primary-color);
+    opacity: 0.7;
+}
+
+.nav-item.active {
+    color: var(--primary-color);
+}
+
+.nav-item svg { /* Placeholder for icons */
+    width: 24px;
+    height: 24px;
+    margin-bottom: 4px;
+}
+
+/* Filter Bar specific styles */
+.filter-bar {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 16px;
+    background-color: var(--white);
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--light-grey);
+    cursor: pointer;
+    font-size: 14px;
+    /* transition already includes background-color and color from .btn */
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+.filter-btn:not(.active):hover {
+    background-color: var(--light-grey);
+    border-color: var(--medium-grey);
+    opacity: 1;
+}
+.filter-btn:not(.active):active {
+    background-color: var(--medium-grey); /* Darker for active press */
+    color: var(--white);
+    opacity: 1;
+}
+
+/* Styles for Homework Card elements */
+.subject {
+    font-size: 18px; /* Slightly larger for subject */
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: var(--primary-color); /* Using primary color for subject */
+}
+
+.assignment-title {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.due-date {
+    font-size: 14px;
+    color: var(--medium-grey);
+    margin-bottom: 12px;
+}
+
+/* Toast/Snackbar */
+.toast {
+    position: fixed;
+    bottom: 70px; /* Above bottom nav */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--text-color); /* Dark background */
+    color: var(--white);
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease, bottom 0.3s ease; /* Added bottom transition */
+    font-size: 14px;
+    pointer-events: none; /* Allow clicks through if not visible */
+}
+
+.toast.show { /* Class to make it visible via JS */
+    opacity: 1;
+    bottom: 80px; /* Slide up slightly when shown */
+    pointer-events: auto; /* Clickable when shown */
+}
+
+/* Messages & Announcements Page Specific Styles */
+/* Section title H2s will be replaced by .section-title class in HTML */
+/* Removing old styles:
+.school-announcements-section h2, .class-updates-section h2, .direct-messages-section h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--light-grey);
+    padding-bottom: 8px;
+}
+*/
+
+.announcement-banner {
+    background-color: var(--accent-color); /* Yellowish background for emphasis */
+    border-left: 4px solid var(--primary-color); /* Edu blue accent line */
+    padding: 16px;
+}
+
+.announcement-banner .announcement-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-color); /* Darker text for readability on accent bg */
+    margin-bottom: 6px;
+}
+
+.announcement-banner p {
+    font-size: 14px;
+    color: var(--text-color); /* Darker text for readability */
+    line-height: 1.5;
+}
+
+.update-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 6px;
+}
+
+.chat-preview-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px; /* Slightly less padding than full card for compactness */
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.chat-preview-item:hover {
+    background-color: #f0f0f0; /* Slight hover effect */
+}
+
+.chat-info {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.chat-teacher-name { /* Similar to event-title */
+    font-size: 16px; 
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.last-message { /* Already uses .caption style */
+    color: var(--medium-grey);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px; /* Adjust as needed for mobile view */
+}
+
+.chat-timestamp { /* Already uses .caption style */
+    color: var(--medium-grey);
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+/* Calendar specific styles */
+.calendar {
+    padding: 16px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.calendar-header span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.calendar-header .btn {
+    padding: 6px 12px; /* Smaller padding for prev/next buttons */
+    width: auto; /* Override full width from .btn-primary if it was applied */
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px; /* Increased gap for better spacing */
+    text-align: center;
+}
+
+.calendar-day-header {
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--medium-grey);
+}
+
+.calendar-day {
+    padding: 10px 5px; /* Adjusted padding */
+    border-radius: 6px; /* Rounded corners for days */
+    font-size: 14px;
+    min-height: 36px; /* Ensure consistent height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--light-grey); /* Subtle border for all days */
+}
+
+.calendar-day.absent {
+    background-color: #FEE2E2; /* Light red for absent days */
+    color: #B91C1C; /* Darker red text for absent days */
+    border-color: var(--error-red); /* Error red border */
+}
+
+.calendar-day:empty { /* Style for empty offset days */
+    border: none;
+    background-color: transparent;
+}
+
+/* CTA Section in Attendance */
+.cta-section h2 {
+    margin-bottom: 12px; /* Space between title and buttons */
+}
+
+/* Fee Management Page Specific Styles */
+.next-due-section h2, .past-transactions h2, .payment-options h2 {
+    margin-bottom: 12px;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--light-grey);
+}
+
+.transaction-item:last-child {
+    border-bottom: none; /* Remove border for the last item */
+}
+
+.transaction-title {
+    font-weight: 500; /* Medium weight for title */
+    margin-bottom: 2px;
+}
+
+.date-paid { /* Already uses .caption style, this is for specificity or minor tweaks if needed */
+    color: var(--medium-grey);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 8px 12px; /* Slightly smaller padding for secondary actions */
+    width: auto; /* Not full width */
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    opacity: 1;
+}
+.btn-outline:active {
+    background-color: #1a52c0; /* Darker shade for active */
+    border-color: #1a52c0;
+    opacity: 1;
+}
+
+.payment-options-list {
+    list-style: none; /* Remove default bullet points */
+    padding-left: 0;
+}
+
+.payment-options-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--light-grey);
+}
+
+.payment-options-list li:last-child {
+    border-bottom: none;
+}
+
+/* Events Page Specific Styles */
+/* Section title H2s will be replaced by .section-title class in HTML */
+/* Removing old styles:
+.upcoming-events-section h2, .recorded-events-section h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--light-grey);
+    padding-bottom: 8px;
+}
+*/
+.live-event-card {
+    /* Styles for the live event card are mostly inline in HTML for this example */
+    /* but could be moved here, e.g., border, special background */
+    /* Example: border: 2px solid var(--accent-color); */
+}
+
+.live-event-card h2 {
+    margin-bottom: 8px;
+    font-size: 20px; /* Adjusted size for live card */
+}
+.live-event-card p {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.event-item { /* Already uses .card style */
+    /* Specific styles for event items if needed beyond basic card */
+}
+
+.event-title {
+    font-size: 18px; /* H3 equivalent */
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 4px;
+}
+
+.event-date { /* Already uses .caption style */
+    color: var(--medium-grey);
+    margin-bottom: 8px;
+}
+
+.event-description {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
