@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLink - Attendance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/global-styles.css">
+    <link rel="stylesheet" href="../styles/parent-app-styles.css">
+    <link rel="stylesheet" href="../styles/calendar-styles.css"> <!-- Specific calendar styles -->
+</head>
+<body>
+    <div class="mobile-container">
+        <!-- Top Bar -->
+        <header class="screen-top-bar">
+            <a href="dashboard.html" class="back-button">
+                <i class="material-icons icon">arrow_back</i>
+            </a>
+            <h2 class="screen-top-bar-title">Attendance</h2>
+        </header>
+
+        <!-- Month Navigation -->
+        <section class="month-navigation">
+            <a href="#" class="nav-arrow"><i class="material-icons icon">chevron_left</i></a>
+            <span class="current-month">October 2023</span>
+            <a href="#" class="nav-arrow"><i class="material-icons icon">chevron_right</i></a>
+        </section>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="calendar-container card">
+                <div class="calendar-header">
+                    <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+                </div>
+                <div class="calendar-grid">
+                    <!-- Dates will be populated here (e.g., by JavaScript or backend) -->
+                    <!-- Example: Empty cells for previous month -->
+                    <div class="calendar-day other-month">24</div>
+                    <div class="calendar-day other-month">25</div>
+                    <div class="calendar-day other-month">26</div>
+                    <div class="calendar-day other-month">27</div>
+                    <div class="calendar-day other-month">28</div>
+                    <div class="calendar-day other-month">29</div>
+                    <div class="calendar-day other-month">30</div>
+                    
+                    <div class="calendar-day">1</div>
+                    <div class="calendar-day present">2<span class="attendance-dot"></span></div>
+                    <div class="calendar-day present">3<span class="attendance-dot"></span></div>
+                    <div class="calendar-day absent">4<span class="attendance-dot"></span></div>
+                    <div class="calendar-day present">5<span class="attendance-dot"></span></div>
+                    <div class="calendar-day present">6<span class="attendance-dot"></span></div>
+                    <div class="calendar-day weekend">7</div>
+
+                    <div class="calendar-day weekend">8</div>
+                    <div class="calendar-day present">9<span class="attendance-dot"></span></div>
+                    <div class="calendar-day absent">10<span class="attendance-dot"></span></div>
+                    <div class="calendar-day present">11<span class="attendance-dot"></span></div>
+                    <div class="calendar-day present">12<span class="attendance-dot"></span></div>
+                    <div class="calendar-day present">13<span class="attendance-dot"></span></div>
+                    <div class="calendar-day weekend">14</div>
+
+                    <div class="calendar-day weekend">15</div>
+                    <div class="calendar-day present">16<span class="attendance-dot"></span></div>
+                    <div class="calendar-day present">17<span class="attendance-dot"></span></div>
+                    <div class="calendar-day present">18<span class="attendance-dot"></span></div>
+                    <div class="calendar-day absent">19<span class="attendance-dot"></span></div>
+                    <div class="calendar-day present">20<span class="attendance-dot"></span></div>
+                    <div class="calendar-day weekend">21</div>
+                    
+                    <div class="calendar-day weekend">22</div>
+                    <div class="calendar-day future">23</div>
+                    <div class="calendar-day future">24</div>
+                    <div class="calendar-day future">25</div>
+                    <div class="calendar-day future">26</div>
+                    <div class="calendar-day future">27</div>
+                    <div class="calendar-day weekend">28</div>
+
+                    <div class="calendar-day weekend">29</div>
+                    <div class="calendar-day future">30</div>
+                    <div class="calendar-day future">31</div>
+                    <div class="calendar-day other-month">1</div>
+                    <div class="calendar-day other-month">2</div>
+                    <div class="calendar-day other-month">3</div>
+                    <div class="calendar-day other-month">4</div>
+                </div>
+            </div>
+
+            <div class="attendance-legend card">
+                <h3 class="card-title">Legend</h3>
+                <div class="legend-item">
+                    <span class="legend-dot present"></span> Present
+                </div>
+                <div class="legend-item">
+                    <span class="legend-dot absent"></span> Absent
+                </div>
+                <div class="legend-item">
+                    <span class="legend-dot no-data"></span> No School / Holiday
+                </div>
+                 <div class="legend-item">
+                    <span class="legend-dot future"></span> Future / No Data
+                </div>
+            </div>
+
+            <div class="attendance-summary card">
+                <h3 class="card-title">Summary (October)</h3>
+                <p>Total Present: 10/14 days</p>
+                <p>Total Absent: 4/14 days</p>
+            </div>
+
+        </main>
+
+        <!-- Bottom Navigation Bar -->
+        <nav class="bottom-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="material-icons icon">dashboard</i>
+                <span class="nav-label">Dashboard</span>
+            </a>
+            <a href="homework-list.html" class="nav-item">
+                <i class="material-icons icon">assignment</i>
+                <span class="nav-label">Homework</span>
+            </a>
+            <a href="attendance.html" class="nav-item active">
+                <i class="material-icons icon">event_available</i>
+                <span class="nav-label">Attendance</span>
+            </a>
+            <a href="#profile" class="nav-item">
+                <i class="material-icons icon">person</i>
+                <span class="nav-label">Profile</span>
+            </a>
+        </nav>
+    </div>
+</body>
+</html>

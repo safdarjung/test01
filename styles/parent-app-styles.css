@@ -1,0 +1,300 @@
+/* Parent App Specific Styles */
+
+body {
+    background-color: var(--neutral-light-grey); /* Ensure body background is light grey for mobile view */
+}
+
+.mobile-container {
+    max-width: 480px; /* Common mobile screen width */
+    margin: 0 auto;
+    background-color: var(--neutral-light-grey);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure it takes at least full viewport height */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Optional: For better visual separation on desktop testing */
+}
+
+/* Top Bar */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-small) var(--spacing-medium);
+    background-color: var(--neutral-white);
+    border-bottom: 1px solid var(--input-border-grey); /* Subtle separator */
+    position: sticky; /* Make it sticky */
+    top: 0;
+    z-index: 1000;
+}
+
+.language-toggle {
+    font-size: var(--font-size-secondary);
+}
+
+.language-toggle a {
+    text-decoration: none;
+    color: var(--text-medium-grey);
+    padding: var(--spacing-small);
+}
+
+.language-toggle a.active {
+    color: var(--primary-blue);
+    font-weight: var(--font-weight-semibold);
+}
+
+.top-bar-icons {
+    display: flex;
+    align-items: center;
+}
+
+.top-bar-icons .icon {
+    font-size: 24px; /* Standard icon size */
+    color: var(--text-dark-grey);
+}
+
+.notification-bell {
+    position: relative;
+    margin-right: var(--spacing-medium); /* Space before settings icon */
+}
+
+.notification-bell .badge {
+    background-color: var(--secondary-yellow); /* As per requirement */
+    width: 10px; /* Adjusted size */
+    height: 10px; /* Adjusted size */
+    top: 0px; /* Fine-tune position */
+    right: 0px; /* Fine-tune position */
+}
+
+.settings-icon .icon {
+    color: var(--text-dark-grey);
+}
+
+
+/* Main Content Area */
+.main-content {
+    flex-grow: 1; /* Allows content to take available space */
+    padding: var(--spacing-medium);
+    padding-bottom: 80px; /* Ensure content doesn't hide behind bottom-nav */
+    background-color: var(--neutral-light-grey);
+}
+
+.screen-title {
+    margin-bottom: var(--spacing-medium);
+}
+.screen-title h1 {
+    font-size: var(--font-size-h1); /* From global */
+    margin: 0; /* Remove default margin for h1 in this context */
+}
+
+
+/* Dashboard Specific Cards */
+.attendance-card .calendar-mini-view {
+    /* Basic placeholder styling */
+    padding: var(--spacing-medium) 0;
+    text-align: center;
+    font-size: var(--font-size-secondary);
+    color: var(--text-medium-grey);
+}
+
+.attendance-card .date-dots {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: var(--spacing-small);
+}
+
+.attendance-card .dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: var(--spacing-small);
+}
+.attendance-card .dot.present { background-color: var(--feedback-success-green); }
+.attendance-card .dot.absent { background-color: var(--feedback-error-red); }
+
+
+.homework-summary-card .ai-summary-text {
+    font-size: var(--font-size-body);
+    color: var(--text-medium-grey);
+    margin-bottom: var(--spacing-medium);
+    line-height: var(--line-height-normal);
+}
+
+.fee-status-card .amount-due {
+    font-size: var(--font-size-h3); /* Larger for emphasis */
+    color: var(--text-dark-grey);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-small);
+}
+
+.fee-status-card .due-date {
+    font-size: var(--font-size-secondary);
+    color: var(--text-medium-grey);
+    margin-bottom: var(--spacing-medium);
+}
+
+.fee-status-card .btn-primary {
+    width: 100%; /* Make button full width within card */
+}
+
+/* Card actions (like view full calendar) */
+.card .btn-text {
+    display: block; /* Make it take full width for easier tapping */
+    text-align: right;
+    padding-top: var(--spacing-small);
+    font-weight: var(--font-weight-medium);
+}
+
+/* Bottom Navigation Bar */
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--neutral-white);
+    border-top: 1px solid var(--input-border-grey); /* Subtle separator */
+    padding: var(--spacing-small) 0;
+    position: fixed; /* Stick to bottom */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    max-width: 480px; /* Match mobile-container width */
+    margin: 0 auto; /* Center it if mobile-container has auto margins */
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--text-medium-grey);
+    padding: var(--spacing-small);
+    flex-grow: 1; /* Distribute space equally */
+    font-size: var(--font-size-secondary); /* Smaller text for nav items */
+}
+
+.nav-item .icon {
+    font-size: 24px; /* Standard icon size */
+    margin-bottom: 4px; /* Space between icon and label */
+}
+
+.nav-item.active {
+    color: var(--primary-blue);
+}
+
+.nav-item.active .icon {
+    color: var(--primary-blue);
+}
+
+.nav-label {
+    font-size: 12px; /* Even smaller for labels */
+}
+
+/* Common styles for top bars on other screens */
+.screen-top-bar {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-medium);
+    background-color: var(--neutral-white);
+    border-bottom: 1px solid var(--input-border-grey);
+}
+
+.screen-top-bar .back-button {
+    color: var(--text-dark-grey);
+    margin-right: var(--spacing-medium);
+}
+
+.screen-top-bar .screen-top-bar-title {
+    font-size: var(--font-size-h2); /* Example size, adjust as needed */
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-dark-grey);
+    margin: 0; /* Remove default margins */
+}
+
+/* Month Navigation for Attendance Screen */
+.month-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-medium);
+    background-color: var(--neutral-white); /* Or light grey if preferred */
+    border-bottom: 1px solid var(--input-border-grey);
+}
+
+.month-navigation .nav-arrow {
+    color: var(--primary-blue);
+}
+
+.month-navigation .current-month {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-dark-grey);
+}
+
+/* List Item Styles (for Homework and similar lists) */
+.list-item-card {
+    background-color: var(--neutral-white);
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--shadow-subtle); /* Lighter shadow for list items */
+    padding: var(--spacing-medium);
+    margin-bottom: var(--spacing-medium);
+}
+
+.list-item-card .subject-tag {
+    display: inline-block;
+    background-color: var(--secondary-yellow); /* Example: using accent for subject tags */
+    color: var(--text-dark-grey); /* Or white if contrast is better */
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: var(--font-size-secondary);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--spacing-small);
+}
+
+.list-item-card .item-title {
+    font-size: var(--font-size-h3); /* Or a bit smaller if H3 is too big */
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-dark-grey);
+    margin-bottom: var(--spacing-small);
+}
+
+.list-item-card .item-summary {
+    font-size: var(--font-size-body);
+    color: var(--text-medium-grey);
+    margin-bottom: var(--spacing-small);
+    line-height: var(--line-height-normal);
+}
+
+.list-item-card .due-date {
+    font-size: var(--font-size-secondary);
+    color: var(--text-medium-grey);
+}
+
+.list-item-card .due-date.overdue {
+    color: var(--feedback-error-red);
+    font-weight: var(--font-weight-semibold);
+}
+
+.list-item-card .status-indicator {
+    font-size: var(--font-size-secondary);
+    font-weight: var(--font-weight-medium);
+    margin-top: var(--spacing-small);
+    /* Example status colors - to be refined */
+}
+.list-item-card .status-pending { color: var(--text-medium-grey); }
+.list-item-card .status-submitted { color: var(--primary-blue); }
+.list-item-card .status-graded { color: var(--feedback-success-green); }
+
+
+.empty-state {
+    text-align: center;
+    padding: var(--spacing-xlarge) var(--spacing-medium);
+    color: var(--text-medium-grey);
+}
+
+.empty-state .icon {
+    font-size: 48px; /* Larger icon for empty state */
+    margin-bottom: var(--spacing-medium);
+}

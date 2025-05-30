@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLink - Homework</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/global-styles.css">
+    <link rel="stylesheet" href="../styles/parent-app-styles.css">
+</head>
+<body>
+    <div class="mobile-container">
+        <!-- Top Bar -->
+        <header class="screen-top-bar">
+            <a href="dashboard.html" class="back-button">
+                <i class="material-icons icon">arrow_back</i>
+            </a>
+            <h2 class="screen-top-bar-title">Homework</h2>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Homework Item 1 -->
+            <section class="list-item-card">
+                <div class="subject-tag" style="background-color: #D1FAE5; color: #065F46;">Mathematics</div> <!-- Example specific tag color -->
+                <h3 class="item-title">Chapter 5 Exercise</h3>
+                <p class="item-summary">Complete all odd-numbered problems from the end of chapter 5. Show your work for each problem.</p>
+                <p class="due-date">Due: Oct 20, 2023</p>
+                <p class="status-indicator status-pending">Status: Pending</p>
+            </section>
+
+            <!-- Homework Item 2 (Overdue) -->
+            <section class="list-item-card">
+                <div class="subject-tag" style="background-color: #FEF3C7; color: #92400E;">Science</div>
+                <h3 class="item-title">Lab Report: Photosynthesis</h3>
+                <p class="item-summary">Submit the full lab report including hypothesis, methodology, results, and conclusion for the photosynthesis experiment.</p>
+                <p class="due-date overdue">Due: Oct 15, 2023</p>
+                <p class="status-indicator status-pending">Status: Pending (Overdue)</p>
+            </section>
+
+            <!-- Homework Item 3 (Submitted) -->
+            <section class="list-item-card">
+                <div class="subject-tag" style="background-color: #E0E7FF; color: #3730A3;">English</div>
+                <h3 class="item-title">Essay: The Great Gatsby</h3>
+                <p class="item-summary">Write a 500-word essay on the symbolism in F. Scott Fitzgerald's "The Great Gatsby".</p>
+                <p class="due-date">Due: Oct 22, 2023</p>
+                <p class="status-indicator status-submitted">Status: Submitted</p>
+            </section>
+            
+            <!-- Homework Item 4 (Graded) -->
+            <section class="list-item-card">
+                <div class="subject-tag" style="background-color: #FCE7F3; color: #9D174D;">History</div>
+                <h3 class="item-title">Presentation: Ancient Rome</h3>
+                <p class="item-summary">Prepare a 10-minute presentation on the rise and fall of the Roman Empire.</p>
+                <p class="due-date">Due: Oct 10, 2023</p>
+                <p class="status-indicator status-graded">Status: Graded (A)</p>
+            </section>
+
+            <!-- Empty State Example (Uncomment to test) -->
+            <!--
+            <div class="empty-state">
+                <i class="material-icons icon">assignment_turned_in</i>
+                <p>No homework assigned right now.</p>
+            </div>
+            -->
+
+        </main>
+
+        <!-- Bottom Navigation Bar -->
+        <nav class="bottom-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="material-icons icon">dashboard</i>
+                <span class="nav-label">Dashboard</span>
+            </a>
+            <a href="homework-list.html" class="nav-item active">
+                <i class="material-icons icon">assignment</i>
+                <span class="nav-label">Homework</span>
+            </a>
+            <a href="attendance.html" class="nav-item">
+                <i class="material-icons icon">event_available</i>
+                <span class="nav-label">Attendance</span>
+            </a>
+            <a href="#profile" class="nav-item">
+                <i class="material-icons icon">person</i>
+                <span class="nav-label">Profile</span>
+            </a>
+        </nav>
+    </div>
+</body>
+</html>

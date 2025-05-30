@@ -1,0 +1,272 @@
+/* Admin Dashboard Specific Styles */
+
+body {
+    background-color: var(--neutral-light-grey);
+    font-family: var(--font-primary);
+    margin: 0;
+}
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Top Navigation Bar */
+.top-nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--spacing-large);
+    height: 70px;
+    background-color: var(--neutral-white);
+    box-shadow: var(--shadow-subtle);
+    border-bottom: 1px solid var(--input-border-grey);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.top-nav-bar .logo {
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-blue);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: var(--spacing-medium);
+    object-fit: cover;
+}
+
+.user-name {
+    font-size: var(--font-size-body);
+    color: var(--text-dark-grey);
+    margin-right: var(--spacing-large);
+    font-weight: var(--font-weight-medium);
+}
+
+.logout-button {
+    font-size: var(--font-size-button);
+}
+
+/* Main Content Area */
+.main-dashboard-content {
+    flex-grow: 1;
+    padding: var(--spacing-large);
+    background-color: var(--neutral-light-grey);
+}
+
+/* Tabs Container */
+.tabs-container {
+    width: 100%;
+    max-width: 1200px; /* Limit max width for very wide screens */
+    margin: 0 auto;
+}
+
+.tab-nav {
+    display: flex;
+    border-bottom: 2px solid var(--input-border-grey);
+    margin-bottom: var(--spacing-large);
+}
+
+.tab-link {
+    padding: var(--spacing-medium) var(--spacing-large);
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: var(--font-size-body); /* Adjusted from button to body for tab links */
+    font-weight: var(--font-weight-medium);
+    color: var(--text-medium-grey);
+    border-bottom: 4px solid transparent; /* For active indicator */
+    margin-bottom: -2px; /* Align with parent border */
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.tab-link:hover {
+    color: var(--primary-blue);
+}
+
+.tab-link.active {
+    color: var(--primary-blue);
+    border-bottom-color: var(--primary-blue);
+    font-weight: var(--font-weight-semibold);
+}
+
+.tab-content {
+    display: none; /* Hidden by default, shown by JS/React */
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out; /* Simple fade-in animation */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Form Styling */
+.form-card {
+    padding: var(--spacing-large); /* Use card padding */
+    background-color: var(--neutral-white); /* Card background */
+    border-radius: var(--border-radius-medium); /* Card radius */
+    box-shadow: var(--shadow-card); /* Card shadow */
+}
+
+.form-title {
+    font-size: var(--font-size-h2); /* From global */
+    color: var(--text-dark-grey);
+    margin-bottom: var(--spacing-large);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-medium);
+}
+
+.form-group label {
+    display: block;
+    font-size: var(--font-size-body);
+    color: var(--text-dark-grey);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--spacing-small);
+}
+.required-asterisk {
+    color: var(--feedback-error-red);
+    margin-left: 2px;
+}
+
+.input-field { /* Styles from global-styles.css are applied */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea.input-field {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.helper-text {
+    font-size: var(--font-size-secondary);
+    color: var(--text-medium-grey);
+    margin-top: var(--spacing-small);
+}
+
+.checkbox-group div {
+    margin-bottom: var(--spacing-small);
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: var(--spacing-small);
+    width: 16px; /* Custom size */
+    height: 16px; /* Custom size */
+    accent-color: var(--primary-blue); /* Color the checkbox itself */
+}
+.checkbox-group label { /* Label for checkbox */
+    font-weight: var(--font-weight-regular);
+    margin-bottom: 0; /* Override form-group label style */
+}
+
+
+/* Attendance Tab Specifics */
+.attendance-controls {
+    display: flex;
+    gap: var(--spacing-large);
+    margin-bottom: var(--spacing-large);
+    align-items: flex-end; /* Align items to bottom for better label alignment with inputs */
+}
+
+.attendance-controls .form-group {
+    flex-grow: 1;
+    margin-bottom: 0; /* Remove bottom margin as gap is used */
+}
+
+/* Table Styling */
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* For responsiveness on smaller screens */
+    padding: var(--spacing-medium); /* Add padding if using card style */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-body);
+}
+
+th, td {
+    padding: var(--spacing-medium);
+    text-align: left;
+    border-bottom: 1px solid var(--input-border-grey);
+}
+
+th {
+    background-color: var(--neutral-light-grey); /* Light grey background for headers */
+    color: var(--text-dark-grey);
+    font-weight: var(--font-weight-semibold);
+}
+
+tbody tr:hover {
+    background-color: rgba(var(--primary-blue-rgb, 58, 122, 254), 0.05); /* Using RGB for opacity with CSS var */
+}
+/* To make the above work, you might need to define --primary-blue-rgb in :root in global-styles.css if not already */
+/* Example: --primary-blue-rgb: 58, 122, 254; */
+
+
+.attendance-checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--primary-blue);
+    cursor: pointer;
+}
+
+/* Ensure primary blue RGB is defined for opacity features */
+:root {
+  --primary-blue-rgb: 58, 122, 254; /* Add this to your global-styles.css if not present */
+}
+
+/* Responsive Considerations (Basic) */
+@media (max-width: 768px) {
+    .top-nav-bar {
+        padding: 0 var(--spacing-medium);
+        height: auto; /* Allow wrap if needed */
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .user-info {
+        margin-top: var(--spacing-small);
+        width: 100%;
+        justify-content: space-between; /* Better spacing on mobile for user info */
+    }
+    .main-dashboard-content {
+        padding: var(--spacing-medium);
+    }
+    .tab-nav {
+        flex-direction: column; /* Stack tabs on small screens */
+    }
+    .tab-link {
+        border-bottom-width: 2px; /* Thinner border for stacked tabs */
+        margin-bottom: 0;
+    }
+    .attendance-controls {
+        flex-direction: column;
+        gap: var(--spacing-medium);
+        align-items: stretch; /* Full width inputs */
+    }
+}
+
+@media (max-width: 480px) {
+    .user-name {
+        display: none; /* Hide username on very small screens to save space */
+    }
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLink - Parent Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/global-styles.css">
+    <link rel="stylesheet" href="../styles/parent-app-styles.css">
+</head>
+<body>
+    <div class="mobile-container">
+        <!-- Top Bar -->
+        <header class="top-bar">
+            <div class="language-toggle">
+                <a href="#" class="active">EN</a> / <a href="#">HI</a>
+            </div>
+            <div class="top-bar-icons">
+                <div class="notification-bell has-unread">
+                    <i class="material-icons icon">notifications</i>
+                    <span class="badge"></span>
+                </div>
+                <a href="#settings" class="settings-icon">
+                    <i class="material-icons icon">settings</i>
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="screen-title">
+                <h1>Dashboard</h1>
+            </div>
+
+            <!-- Attendance Card -->
+            <section class="card attendance-card">
+                <h3 class="card-title">Attendance</h3>
+                <div class="calendar-mini-view">
+                    <!-- Placeholder for mini calendar -->
+                    <p>Mini calendar/week view will be here.</p>
+                    <div class="date-dots">
+                        <span class="dot present"></span> Mon
+                        <span class="dot absent"></span> Tue
+                        <span class="dot present"></span> Wed
+                        <span class="dot present"></span> Thu
+                        <span class="dot absent"></span> Fri
+                    </div>
+                </div>
+                <a href="attendance.html" class="btn btn-text">View Full Calendar</a>
+            </section>
+
+            <!-- Homework Summary Card -->
+            <section class="card homework-summary-card">
+                <h3 class="card-title">Homework Summary</h3>
+                <p class="ai-summary-text">AI summary will appear here. (e.g., "You have 2 assignments due this week and 1 overdue. Focus on Math homework today!")</p>
+                <a href="homework-list.html" class="btn btn-text">View All Homework</a>
+            </section>
+
+            <!-- Fee Status Card -->
+            <section class="card fee-status-card">
+                <h3 class="card-title">Fee Status</h3>
+                <p class="amount-due">$50.00 Due</p>
+                <p class="due-date">Due by: Oct 25, 2023</p>
+                <button class="btn btn-primary">Pay Now</button>
+            </section>
+
+        </main>
+
+        <!-- Bottom Navigation Bar -->
+        <nav class="bottom-nav">
+            <a href="dashboard.html" class="nav-item active">
+                <i class="material-icons icon">dashboard</i>
+                <span class="nav-label">Dashboard</span>
+            </a>
+            <a href="homework-list.html" class="nav-item">
+                <i class="material-icons icon">assignment</i>
+                <span class="nav-label">Homework</span>
+            </a>
+            <a href="attendance.html" class="nav-item">
+                <i class="material-icons icon">event_available</i>
+                <span class="nav-label">Attendance</span>
+            </a>
+            <a href="#profile" class="nav-item"> <!-- Assuming profile page for now -->
+                <i class="material-icons icon">person</i>
+                <span class="nav-label">Profile</span>
+            </a>
+        </nav>
+    </div>
+</body>
+</html>

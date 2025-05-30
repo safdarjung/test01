@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLink - Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/global-styles.css">
+    <link rel="stylesheet" href="../styles/admin-dashboard-styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Top Navigation Bar -->
+        <nav class="top-nav-bar">
+            <div class="logo">EduLink</div>
+            <div class="user-info">
+                <img src="https://via.placeholder.com/40" alt="User Avatar" class="user-avatar">
+                <span class="user-name">Mrs. Sharma</span>
+                <a href="#logout" class="btn btn-text logout-button">Logout</a>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-dashboard-content">
+            <div class="tabs-container">
+                <div class="tab-nav">
+                    <button class="tab-link active" data-tab="upload-homework">Upload Homework</button>
+                    <button class="tab-link" data-tab="mark-attendance">Mark Attendance</button>
+                    <button class="tab-link" data-tab="post-announcements">Post Announcements</button>
+                </div>
+
+                <!-- Tab Content Panels -->
+                <div id="upload-homework" class="tab-content active">
+                    <div class="card form-card">
+                        <h2 class="form-title">Upload New Homework Assignment</h2>
+                        <form>
+                            <div class="form-group">
+                                <label for="assignment-title">Assignment Title <span class="required-asterisk">*</span></label>
+                                <input type="text" id="assignment-title" name="assignment-title" class="input-field" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Description (Instructions for students)</label>
+                                <textarea id="description" name="description" class="input-field" rows="4"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="file-upload">Attach File (PDF only)</label>
+                                <input type="file" id="file-upload" name="file-upload" class="input-field" accept=".pdf">
+                                <p class="helper-text">Max file size: 5MB. Accepted format: .pdf</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Select Class(es) <span class="required-asterisk">*</span></label>
+                                <div class="checkbox-group">
+                                    <div><input type="checkbox" id="class6a" name="classes" value="6A"><label for="class6a">Class 6A</label></div>
+                                    <div><input type="checkbox" id="class6b" name="classes" value="6B"><label for="class6b">Class 6B</label></div>
+                                    <div><input type="checkbox" id="class7a" name="classes" value="7A"><label for="class7a">Class 7A</label></div>
+                                    <div><input type="checkbox" id="class7b" name="classes" value="7B"><label for="class7b">Class 7B</label></div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Upload Assignment</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="mark-attendance" class="tab-content">
+                    <div class="card form-card">
+                        <h2 class="form-title">Mark Attendance</h2>
+                        <div class="attendance-controls">
+                            <div class="form-group">
+                                <label for="attendance-date">Select Date</label>
+                                <input type="date" id="attendance-date" name="attendance-date" class="input-field" value="<!-- Today's Date (e.g., 2023-10-27) -->">
+                            </div>
+                            <div class="form-group">
+                                <label for="attendance-class">Select Class</label>
+                                <select id="attendance-class" name="attendance-class" class="input-field">
+                                    <option value="6A">Class 6A</option>
+                                    <option value="6B">Class 6B</option>
+                                    <option value="7A">Class 7A</option>
+                                    <option value="7B">Class 7B</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="table-container card"> <!-- Card style for table container -->
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Roll Number</th>
+                                        <th>Student Name</th>
+                                        <th>Status (Mark as Present)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>001</td>
+                                        <td>Aarav Patel</td>
+                                        <td><input type="checkbox" class="attendance-checkbox"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>002</td>
+                                        <td>Bhavya Sharma</td>
+                                        <td><input type="checkbox" class="attendance-checkbox" checked></td>
+                                    </tr>
+                                    <tr>
+                                        <td>003</td>
+                                        <td>Chetan Kumar</td>
+                                        <td><input type="checkbox" class="attendance-checkbox"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>004</td>
+                                        <td>Diya Singh</td>
+                                        <td><input type="checkbox" class="attendance-checkbox" checked></td>
+                                    </tr>
+                                    <!-- Add more student rows as needed -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="margin-top: var(--spacing-medium);">Save Attendance</button>
+                    </div>
+                </div>
+
+                <div id="post-announcements" class="tab-content">
+                    <div class="card form-card">
+                        <h2 class="form-title">Create New Announcement</h2>
+                        <form>
+                            <div class="form-group">
+                                <label for="announcement-title">Title <span class="required-asterisk">*</span></label>
+                                <input type="text" id="announcement-title" name="announcement-title" class="input-field" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="announcement-content">Announcement Content <span class="required-asterisk">*</span></label>
+                                <textarea id="announcement-content" name="announcement-content" class="input-field" rows="6" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="announcement-filter">Visible To (Class Filter)</label>
+                                <select id="announcement-filter" name="announcement-filter" class="input-field" multiple>
+                                    <option value="all" selected>All Classes</option>
+                                    <option value="6A">Class 6A</option>
+                                    <option value="6B">Class 6B</option>
+                                    <option value="7A">Class 7A</option>
+                                    <option value="7B">Class 7B</option>
+                                </select>
+                                <p class="helper-text">Hold Ctrl/Cmd to select multiple classes. "All Classes" applies to everyone.</p>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Publish Announcement</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Basic Tab functionality (for demonstration, React would handle this)
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab-link');
+            const tabContents = document.querySelectorAll('.tab-content');
+            const attendanceDateInput = document.getElementById('attendance-date');
+
+            // Set default date for attendance
+            if (attendanceDateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                attendanceDateInput.value = today;
+            }
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    const targetTab = tab.getAttribute('data-tab');
+                    tabContents.forEach(content => {
+                        if (content.id === targetTab) {
+                            content.classList.add('active');
+                        } else {
+                            content.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
